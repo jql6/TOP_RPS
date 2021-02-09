@@ -10,7 +10,12 @@
     Make a function called computerPlay that will randomly return
     Rock, Paper, or Scissors.
     */
-
+    function computerPlay() {
+      // Make an array containing Rock, Paper, and Scissors
+      let RPS_choices = ["Rock", "Paper", "Scissors"];
+      // Randomly select one of the choices in RPS_choices
+      return RPS_choices[Math.floor(Math.random() * RPS_choices.length)];
+    }
     /*
     Write a function that plays a single round of Rock Paper Scissors.
     The function shuold take two parameters - the playerSelection and
