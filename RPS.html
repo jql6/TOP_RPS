@@ -37,9 +37,18 @@
     function RPS_round(playerSelection, computerSelection){
       // Assume that playerSelection and computerSelection are strings
       let RPS_choices = ["Rock", "Paper", "Scissors"];
+
+      // Create game results
+      let game_results = [`Tie! Try again!`,
+                          `You lose! ${computerSelection_2} beats ` +
+                          `${playerSelection_2}`,
+                          `You win! ${playerSelection_2} beats ` +
+                          `${computerSelection_2}`]
+      
       // Make both selections all lowercase and capitalize the first letter
       let playerSelection_2 = capitalize_first_letter(playerSelection);
       let computerSelection_2 = capitalize_first_letter(computerSelection);
+      
       // If playerSelection is not one of the choices
       if (RPS_choices.includes(playerSelection_2 == false)) {
         return `Error, you must choose "Rock", "Paper", or "Scissors"!`;
@@ -48,7 +57,15 @@
         return `Error, computer must choose "Rock", "Paper", or "Scissors"!`;
       } // Otherwise, play the game
       else{
-        // Need to figure out a way to do game logic for RPS
+        // We need all combinations to create differences; 0 won't work
+        let player_num = RPS_choices.indexOf(playerSelection_2) + 1;
+        let computer_num = RPS_choices.indexOf(computerSelection_2) + 1;
+        
+        // This calculation gets us a game result
+        let game_score = player_num - computer_num;
+        
+        // Choose game result based on the game score
+        return game_results.slice(game_score)[0];
       }
     }
 
