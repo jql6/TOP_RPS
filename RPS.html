@@ -24,6 +24,26 @@
     case insensitive. Examples include: rock, ROCK, RocK.
     */
 
+    // Writing an extra function here to make everything lowercase then
+    // capitalizing the first letter
+    function capitalize_first_letter(string_1){
+      // Assume the input is a string
+      // Convert string_1 to lowercase
+      let string_2 = string_1.toLowerCase();
+      // Capitalize the first letter
+      return string_1.charAt(0).toUpperCase() + string_1.slice(1);
+    }
+
+    function RPS_round(playerSelection, computerSelection){
+      // Assume that playerSelection and computerSelection are strings
+      let RPS_choices = ["Rock", "Paper", "Scissors"];
+      // Make both selections all lowercase and capitalize the first letter
+      let playerSelection_2 = capitalize_first_letter(playerSelection);
+      let computerSelection_2 = capitalize_first_letter(computerSelection);
+      // Check if playerSelection is in RPS_choices
+      
+    }
+
     /*
     Write a new function called game(). Use the previous function inside the
     game() function to play a 5 round game that keeps score and reports a
