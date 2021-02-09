@@ -40,8 +40,16 @@
       // Make both selections all lowercase and capitalize the first letter
       let playerSelection_2 = capitalize_first_letter(playerSelection);
       let computerSelection_2 = capitalize_first_letter(computerSelection);
-      // Check if playerSelection is in RPS_choices
-      
+      // If playerSelection is not one of the choices
+      if (RPS_choices.includes(playerSelection_2 == false)) {
+        return `Error, you must choose "Rock", "Paper", or "Scissors"!`;
+      } // If computerSelection is not one of the choices
+      else if (RPS_choices.includes(computerSelection) == false) {
+        return `Error, computer must choose "Rock", "Paper", or "Scissors"!`;
+      } // Otherwise, play the game
+      else{
+        // Need to figure out a way to do game logic for RPS
+      }
     }
 
     /*
