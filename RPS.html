@@ -31,29 +31,31 @@
       // Convert string_1 to lowercase
       let string_2 = string_1.toLowerCase();
       // Capitalize the first letter
-      return string_1.charAt(0).toUpperCase() + string_1.slice(1);
+      return string_2.charAt(0).toUpperCase() + string_2.slice(1);
     }
 
     function RPS_round(playerSelection, computerSelection){
       // Assume that playerSelection and computerSelection are strings
       let RPS_choices = ["Rock", "Paper", "Scissors"];
 
+      // Make both selections all lowercase and capitalize the first letter
+      let playerSelection_2 = capitalize_first_letter(playerSelection);
+      let computerSelection_2 = capitalize_first_letter(computerSelection);
+
+      // Look at the spreadsheet for more details on the game logic
+      
       // Create game results
       let game_results = [`Tie! Try again!`,
                           `You lose! ${computerSelection_2} beats ` +
                           `${playerSelection_2}`,
                           `You win! ${playerSelection_2} beats ` +
-                          `${computerSelection_2}`]
-      
-      // Make both selections all lowercase and capitalize the first letter
-      let playerSelection_2 = capitalize_first_letter(playerSelection);
-      let computerSelection_2 = capitalize_first_letter(computerSelection);
+                          `${computerSelection_2}`];
       
       // If playerSelection is not one of the choices
       if (RPS_choices.includes(playerSelection_2 == false)) {
         return `Error, you must choose "Rock", "Paper", or "Scissors"!`;
       } // If computerSelection is not one of the choices
-      else if (RPS_choices.includes(computerSelection) == false) {
+      else if (RPS_choices.includes(computerSelection_2) == false) {
         return `Error, computer must choose "Rock", "Paper", or "Scissors"!`;
       } // Otherwise, play the game
       else{
