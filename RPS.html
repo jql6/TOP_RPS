@@ -78,6 +78,50 @@
     of each round and the winner at the end. Use prompt() to get input from
     the user.
     */
+
+    function game() {
+      // Initialize two variables to keep track of the number of wins
+      // for both players
+      player_wins = 0;
+      computer_wins = 0;
+
+      // Do this loop until one of the win counters reaches 3
+      while (player_wins < 3 && computer_wins < 3){
+        // Play a round of rock paper scissors with the RPS_round function
+        let p1_choice = prompt("Make your choice: rock, paper, or scissors?");
+        let game_result = RPS_round(playerSelection = p1_choice,
+                                  computerSelection = computerPlay());
+        
+        // Print the game result
+        console.log(game_result);
+
+        // Check for tie
+        if (game_result.substr(0, 3) == "Tie") {
+          // If it's a tie, redo the round
+          continue;
+        } // Check if player 1 wins
+        else if (game_result.substr(4, 1) == "w") {
+          player_wins += 1;
+        } // Computer must have won if it's not a tie and player 1 didn't win
+        else {
+          console.assert( // Check that game result is loss for player 1
+            assertion = game_result.substr(4, 1 == "l"),
+            `Error, game result is not returning the right string!`
+            );
+          computer_wins += 1;
+        }
+        // Print the score
+        console.log(`Current score
+                       You: "${player_wins}" | Computer: "${computer_wins}"`);
+      }
+      // Print win message if player 1 wins
+      if (player_wins == 3){
+        console.log(`You beat the computer! Nice work.`);
+      } // Otherwise, print lose message because computer wins
+      else{
+        console.log(`You got wrecked; the computer won.`);
+      }
+    }
   </script>
 </body>
 </html>
