@@ -6,10 +6,25 @@
   <link rel="stylesheet" href="RPSstyle.css">
 </head>
 <body>
-  <section class="selections">
-    <button data-name="Rock" class="player-selection">Rock</button>
-    <button data-name="Paper" class="player-selection">Paper</button>
-    <button data-name="Scissors" class="player-selection">Scissors</button>
+  <section class="game-window">
+    <section class="scores-grid">
+      <p class="scores">0</p>
+      <p class="scores">0</p>
+    </section>
+  
+    <section class="selections">
+      <button data-name="Rock" class="player-selection">Rock</button>
+      <button data-name="Paper" class="player-selection">Paper</button>
+      <button data-name="Scissors" class="player-selection">Scissors</button>
+    </section>
+  
+    <section class="output-box">
+      <p id="selection-output" class="output-text"></p>
+    </section>
+  
+    <section class="output-box">
+      <p id="game-output" class="output-text"></p>
+    </section>
   </section>
 
   <script>
@@ -138,13 +153,17 @@
     function printMessage(e){
       // Get the name of the clicked html element
       playerChoice = e.target.getAttribute("data-name");
+      // Select the html element to add text to
+      const selectionOutput = document.querySelector("p#selection-output");
       // Tell the player the choice they made
-      console.log(`You selected: "${e.target.getAttribute("data-name")}".`);
+      selectionOutput.textContent =
+          `You selected: "${e.target.getAttribute("data-name")}".`;
       // Play out a round
       let game_result = RPS_round(playerSelection = playerChoice,
                                   computerSelection = computerPlay());
       // Print the game result
-      console.log(game_result);
+      const gameOutput = document.querySelector("p#game-output");
+      gameOutput.textContent = game_result;
     }
     // Select the buttons with the player-selection class
     const selectionButtons =
