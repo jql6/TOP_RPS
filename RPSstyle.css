@@ -68,7 +68,7 @@ p.score-name {
     /* The three styles below make the text vertically centered */
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0px;
     padding: 0px;
     height: 100%;
