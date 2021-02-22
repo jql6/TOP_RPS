@@ -185,12 +185,19 @@
         document.querySelector("p#computer-score").textContent = computer_wins;
       }
 
-      // Print win message if player 1 wins
-      if (player_wins == 3){
-        alert(`You beat the computer! Nice work.`);
-      } // Otherwise, print lose message because computer wins
-      else if (computer_wins == 3){
-        alert(`You got wrecked; the computer won.`);
+      // Print win message if player 1 wins the best of 5
+      if (player_wins == 3 || computer_wins == 3){
+        if (player_wins == 3) {
+          alert(`You beat the computer! Nice work.`);
+        } else { // Otherwise, print lose message because computer wins
+          alert(`You got wrecked; the computer won.`);
+        }
+        // reset the scores
+        alert(`Resetting the scores...`);
+        player_wins = 0;
+        document.querySelector("p#player-score").textContent = player_wins;
+        computer_wins = 0;
+        document.querySelector("p#computer-score").textContent = computer_wins;
       }
 
     }
