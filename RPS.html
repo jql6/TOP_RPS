@@ -171,6 +171,14 @@
     // For every button, add an event listener that prints message when clicked
     selectionButtons.forEach(button =>
         button.addEventListener("click", printMessage));
+
+    // Initialize two variables to keep track of the number of wins
+    // for both players
+    player_wins = 0;
+    computer_wins = 0;
+    document.querySelector("p#player-score").textContent = player_wins;
+    document.querySelector("p#computer-score").textContent = computer_wins;
+
   </script>
 </body>
 </html>
