@@ -1,5 +1,40 @@
 /* Styles for the rock paper scissors project */
 
+section.game-window{
+    max-width: 600px;
+    margin: auto;
+}
+
 section.selections {
     text-align: center;
+}
+
+section.output-box {
+    background-color: rgb(220, 220, 220);
+    height: 1rem;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+p.output-text {
+    padding: 0px;
+    margin: 0px;
+}
+
+section.scores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60%;
+    background-color:rgb(220, 220, 220);
+    height: 4rem;
+}
+
+p.scores {
+    border-color: rgb(168, 143, 15);
+    border-style: solid;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 1rem 0px;
 }
