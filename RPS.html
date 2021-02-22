@@ -86,7 +86,7 @@
         let computer_num = RPS_choices.indexOf(computerSelection_2) + 1;
         
         // This calculation gets us a game result
-        let game_score = player_num - computer_num;
+        let game_score = computer_num - player_num;
         
         // Choose game result based on the game score
         return game_results.slice(game_score)[0];
