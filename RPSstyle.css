@@ -1,8 +1,8 @@
 /* Styles for the rock paper scissors project */
 
 button.player-selection{
-    font-size: 36px;
-    height: 72px;
+    font-size: 2rem;
+    height: 4rem;
 }
 
 section.game-window{
@@ -17,11 +17,11 @@ section.selections {
 
 section.output-box {
     background-color: rgb(220, 220, 220);
-    height: 2rem;
+    height: 1.5rem;
     margin: 10px 20px;
     padding: 10px 20px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 p.output-text {
