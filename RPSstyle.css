@@ -33,7 +33,18 @@ section.scores-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 60%;
-    background-color:rgb(220, 220, 220);
+    background-color:rgb(235, 235, 235);
+    height: 4rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+section.score-name-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20%;
+    background-color:rgb(235, 235, 235);
     height: 4rem;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -51,4 +62,21 @@ p.scores {
     margin: 0px;
     padding: 0px;
     height: 100%;
+}
+
+p.score-name {
+    /* The three styles below make the text vertically centered */
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+p#left-score-name {
+    justify-content: left;
+}
+p#right-score-name {
+    justify-content: right;
 }
