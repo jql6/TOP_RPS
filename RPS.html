@@ -164,7 +164,37 @@
       // Print the game result
       const gameOutput = document.querySelector("p#game-output");
       gameOutput.textContent = game_result;
+
+      // Add to the scores
+      // Check for tie
+      if (game_result.substr(0, 3) == "Tie") {
+        // If it's a tie, redo the round
+        ////continue;
+      } // Check if player 1 wins
+      else if (game_result.substr(4, 1) == "w") {
+        player_wins += 1;
+        document.querySelector("p#player-score").textContent = player_wins;
+      } // Computer must have won if it's not a tie and player 1 didn't win
+      else {
+        console.log(`assertion: "${game_result.substr(4, 1)}"`);
+        console.assert( // Check that game result is loss for player 1
+          assertion = game_result.substr(4, 1) == "l",
+          `Error, game result is not returning the right string!`
+          );
+        computer_wins += 1;
+        document.querySelector("p#computer-score").textContent = computer_wins;
+      }
+
+      // Print win message if player 1 wins
+      if (player_wins == 3){
+        alert(`You beat the computer! Nice work.`);
+      } // Otherwise, print lose message because computer wins
+      else if (computer_wins == 3){
+        alert(`You got wrecked; the computer won.`);
+      }
+
     }
+
     // Select the buttons with the player-selection class
     const selectionButtons =
         document.querySelectorAll("button.player-selection");
@@ -172,6 +202,7 @@
     selectionButtons.forEach(button =>
         button.addEventListener("click", printMessage));
 
+    
     // Initialize two variables to keep track of the number of wins
     // for both players
     player_wins = 0;
