@@ -10,6 +10,10 @@ section.game-window{
     margin: auto;
 }
 
+section#links > p{
+    text-align: center;
+}
+
 section.selections {
     text-align: center;
     padding: 10px;
